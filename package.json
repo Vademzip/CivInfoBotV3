@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "install": "^0.13.0"
+  },
+
+  "name": "civrankedbot",
+  "version": "1.0.4",
+  "main": "client.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node client.js"
+  },
+  "keywords": [],
+  "author": "_vadya_queen",
+  "license": "ISC",
+  "description": ""
+}
