@@ -374,6 +374,42 @@ module.exports = (bot) => {
             // if ((message.channel.id === "590963477817065474") && (message.content == "!help"))
             //     message.channel.send("вы написали в общалки!")
 
+            let p = '1671620400'
+
+            message.react('✅')
+
+            function sleep(milliseconds) {
+                const date = Date.now();
+                let currentDate = null;
+                do {
+                    currentDate = Date.now();
+                } while (currentDate - date < milliseconds);
+            }
+
+
+            if (message.content == "!time"){
+                message.channel.send("В <t:1671620400:F>")
+                message.channel.send("В <t:1671638400:F>")
+                message.channel.send("В <t:1671706800:F>")
+                message.channel.send("В <t:1671724800:F>")
+                message.channel.send("В <t:1671786000:F>")
+                message.channel.send("В <t:1671793200:F>")
+                message.channel.send("В <t:1671800400:F>")
+                message.channel.send("В <t:1671807600:F>")
+                message.channel.send("В <t:1671814800:F>")
+                message.channel.send(`В <t:${1671786000+86400}:F>`)
+                message.channel.send(`В <t:${1671793200+86400}:F>`)
+                message.channel.send(`В <t:${1671800400+86400}:F>`)
+                message.channel.send(`В <t:${1671807600+86400}:F>`)
+                message.channel.send(`В <t:${1671814800+86400}:F>`)
+                message.channel.send(`В <t:${1671786000+86400*2}:F>`)
+                message.channel.send(`В <t:${1671793200+86400*2}:F>`)
+                message.channel.send(`В <t:${1671800400+86400*2}:F>`)
+                message.channel.send(`В <t:${1671807600+86400*2}:F>`)
+                message.channel.send(`В <t:${1671814800+86400*2}:F>`)
+            }
+
+
 
             if (message.content == "mylife кто?")
                 message.channel.send("Я думаю что он gay")
