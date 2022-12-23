@@ -649,7 +649,7 @@ module.exports = (bot) => {
                         mentionArray.push("<@" + item.user.id + ">")
                     })
                 }
-                if (message.channel.id === "884501493410054154") {
+                if (message.channel.id === "914891468601188402") {
                     mode = 1;
                     FFAVanillaCount = FFAVanillaCount + 1;
                     ThreadName = FFAVanillaCount;
