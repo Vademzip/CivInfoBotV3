@@ -5,6 +5,73 @@ let TeamsCount = 150;
 let mode = 0;
 let lastMessage = "hello";
 let mentionArray = [];
+const year = (year, month) => {
+    year = year - 2000
+    if (year % 4 === 0 && month < 3)
+        return year * 31536000 + 946674000 + Math.floor(year / 4) * 86400
+    else
+        return year * 31536000 + 946674000 + Math.floor(year / 4) * 86400 + 86400
+
+}
+
+const month = (month) => {
+    let time = 0
+    if (month === 1)
+        return time
+    time = time + 2678400
+    if (month === 2)
+        return time
+    time = time + 2419200
+    if (month === 3)
+        return time
+    time = time + 2678400
+    if (month === 4)
+        return time
+    time = time + 2592000
+    if (month === 5)
+        return time
+    time = time + 2678400
+    if (month === 6)
+        return time
+    time = time + 2592000
+    if (month === 7)
+        return time
+    time = time + 2678400
+    if (month === 8)
+        return time
+    time = time + 2678400
+    if (month === 9)
+        return time
+    time = time + 2592000
+    if (month === 10)
+        return time
+    time = time + 2678400
+    if (month === 11)
+        return time
+    time = time + 2592000
+    if (month === 12)
+        return time
+
+}
+
+const day = (day) => {
+    if (day > 1)
+        return (day - 1) * 86400
+    else return 0
+}
+
+const hour = (hour) => {
+    return hour * 3600
+}
+
+const minute = (minute) => {
+    return minute * 60
+}
+
+const time = (d = 1, m = 1, y = 2000, h = 0, min = 0) => {
+    return  day(d) + month(m) + year(y, m) + hour(h) + minute(min)
+
+}
 
 
 let civList = {
@@ -388,25 +455,54 @@ module.exports = (bot) => {
 
 
             if (message.content == "!time"){
-                message.channel.send("В <t:1671620400:F>")
-                message.channel.send("В <t:1671638400:F>")
-                message.channel.send("В <t:1671706800:F>")
-                message.channel.send("В <t:1671724800:F>")
-                message.channel.send("В <t:1671786000:F>")
-                message.channel.send("В <t:1671793200:F>")
-                message.channel.send("В <t:1671800400:F>")
-                message.channel.send("В <t:1671807600:F>")
-                message.channel.send("В <t:1671814800:F>")
-                message.channel.send(`В <t:${1671786000+86400}:F>`)
-                message.channel.send(`В <t:${1671793200+86400}:F>`)
-                message.channel.send(`В <t:${1671800400+86400}:F>`)
-                message.channel.send(`В <t:${1671807600+86400}:F>`)
-                message.channel.send(`В <t:${1671814800+86400}:F>`)
-                message.channel.send(`В <t:${1671786000+86400*2}:F>`)
-                message.channel.send(`В <t:${1671793200+86400*2}:F>`)
-                message.channel.send(`В <t:${1671800400+86400*2}:F>`)
-                message.channel.send(`В <t:${1671807600+86400*2}:F>`)
-                message.channel.send(`В <t:${1671814800+86400*2}:F>`)
+                message.channel.send(`В <t:${time(17,1,2023,19)}:F> (+-)`)
+                message.channel.send(`В <t:${time(18,1,2023,14)}:F> (+-)`)
+                message.channel.send(`В <t:${time(18,1,2023,19)}:F> (+-)`)
+                message.channel.send(`В <t:${time(19,1,2023,14)}:F> (+-)`)
+                message.channel.send(`В <t:${time(19,1,2023,19)}:F> (+-)`)
+                message.channel.send(`В <t:${time(20,1,2023,12)}:F>`)
+                message.channel.send(`В <t:${time(20,1,2023,14)}:F>`)
+                message.channel.send(`В <t:${time(20,1,2023,16)}:F>`)
+                message.channel.send(`В <t:${time(20,1,2023,18)}:F>`)
+                message.channel.send(`В <t:${time(20,1,2023,20)}:F>`)
+                message.channel.send(`В <t:${time(21,1,2023,12)}:F>`)
+                message.channel.send(`В <t:${time(21,1,2023,14)}:F>`)
+                message.channel.send(`В <t:${time(21,1,2023,16)}:F>`)
+                message.channel.send(`В <t:${time(21,1,2023,18)}:F>`)
+                message.channel.send(`В <t:${time(21,1,2023,20)}:F>`)
+                message.channel.send(`В <t:${time(22,1,2023,12)}:F>`)
+                message.channel.send(`В <t:${time(22,1,2023,14)}:F>`)
+                message.channel.send(`В <t:${time(22,1,2023,16)}:F>`)
+                message.channel.send(`В <t:${time(22,1,2023,18)}:F>`)
+                message.channel.send(`В <t:${time(22,1,2023,20)}:F>`)
+
+                /*message.channel.send(`В <t:${1672761600-day+week}:F> (+-)`)
+                message.channel.send(`В <t:${1672743600+week}:F> (+-)`)
+                message.channel.send(`В <t:${1672761600+week}:F> (+-)`)
+                message.channel.send(`В <t:${1672743600+day+week}:F> (+-)`)
+                message.channel.send(`В <t:${1672761600+day+week}:F> (+-)`)
+                message.channel.send(`В <t:${1672743600+day*2+week}:F> (+-)`)
+                message.channel.send(`В <t:${1672761600+day*2+week}:F> (+-)`)
+
+                message.channel.send(`В <t:${1672995600+week}:F>`)
+                message.channel.send(`В <t:${1673002800+week}:F>`)
+                message.channel.send(`В <t:${1673010000+week}:F>`)
+                message.channel.send(`В <t:${1673017200+week}:F>`)
+                message.channel.send(`В <t:${1673024400+week}:F>`)
+
+                message.channel.send(`В <t:${1672995600+day+week}:F>`)
+                message.channel.send(`В <t:${1673002800+day+week}:F>`)
+                message.channel.send(`В <t:${1673010000+day+week}:F>`)
+                message.channel.send(`В <t:${1673017200+day+week}:F>`)
+                message.channel.send(`В <t:${1673024400+day+week}:F>`)
+
+                message.channel.send(`В <t:${1672995600+day*2+week}:F>`)
+                message.channel.send(`В <t:${1673002800+day*2+week}:F>`)
+                message.channel.send(`В <t:${1673010000+day*2+week}:F>`)
+                message.channel.send(`В <t:${1673017200+day*2+week}:F>`)
+                message.channel.send(`В <t:${1673024400+day*2+week}:F>`)
+                message.channel.send("Никак не смогу сыграть на этой неделе")*/
+                message.channel.send("Отметьте, что вы проголосовали!")
             }
 
 
